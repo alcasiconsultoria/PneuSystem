@@ -1,11 +1,16 @@
 package Enuns;
 public enum TipoUsuario {
-	ADMINISTRADOR(1), VENDEDOR(2), MECANICO(3);
+	
+	ADMINISTRADOR(1, "Administrador"), 
+	VENDEDOR(2, "Vendedor"), 
+	MECANICO(3, "Mec√¢nico");
 
 	private int valor;
+	private String descricao;
 
-	private TipoUsuario(int valor) {
+	private TipoUsuario(int valor, String descricao) {
 		this.valor = valor;
+		this.descricao = descricao;
 	}
 
 	public int getValor() {
@@ -21,7 +26,7 @@ public enum TipoUsuario {
 		case 3:
 			return MECANICO;
 		default:
-			throw new IllegalArgumentException("Valor inv·lido para o tipo de usu·rio: " + valor);
+			throw new IllegalArgumentException("Valor inv√°lido para o tipo de usu√°rio: " + valor);
 		}
 	}
 }
